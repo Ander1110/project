@@ -39,10 +39,7 @@ export default {
     flex: 1;
     overflow: auto;
   }
-  .footer{
-    width: 100vw;
-    height: 45px;
-  }
+  
 }
 
 </style>
