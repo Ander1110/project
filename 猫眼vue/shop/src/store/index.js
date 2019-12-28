@@ -6,17 +6,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    list:[]
+    list: [],
   },
   mutations: {
-    getList(state,list){
+    getList(state, list) {
       state.list = list
     }
   },
   actions: {
-    getList({commit}){
-      axios.get('/mock/movie.json').then(res=>{
-        commit('getList',res.data.movieList)
+    getList({ commit }) {
+      axios.get('/mock/movie.json').then(res => {
+        commit('getList', res.data.movieList)
       })
     }
   },

@@ -1,16 +1,36 @@
 <template>
   <div id="app">
-      <header>猫眼电影</header>
+      <header v-show="isShowHeader">猫眼电影</header>
       <main><router-view/></main>
-      <FooterBar />
+      <FooterBar v-show="isShowFooter" />
   </div>
 </template>
 <script>
 import FooterBar from './components/FooterBar'
 export default {
+  data() {
+    return {
+      isShowHeader:true,
+      isShowFooter:true
+    }
+  },
   components:{
     FooterBar
-  }
+  },
+  watch: {
+    //监听路由
+    //to代表去哪 from代表来自
+    //to.name是你要跳转的路由
+    '$route'(to,from,next){
+      if(to.name=='Detail'||to.name=='login'){
+        this.isShowHeader=false;
+        this.isShowFooter=false;
+      }else{
+        this.isShowHeader=true;
+        this.isShowFooter=true;
+      }
+    }
+  },
 }
 </script>
 <style lang="scss">
@@ -32,7 +52,7 @@ export default {
     height: 45px;
     text-align: center;
     line-height: 45px;
-    background: #ca361c;
+    background: #ef4238;
     color: #fff;
   }
   main{
