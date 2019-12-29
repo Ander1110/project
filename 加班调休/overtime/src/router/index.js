@@ -1,22 +1,64 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import pend from '../views/pend.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: Home
+    path:'/',
+    redirect:'/pend'
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/pend',
+    name: 'pend',
+    component: pend,
+    redirect:'/pend/work',
+    children:[
+      {
+        path: 'work',
+        name: 'work',
+        component: () => import(/* webpackChunkName: "work" */ '../views/work.vue')
+      },{
+        path: 'vacation',
+        name: 'vacation',
+        component: () => import(/* webpackChunkName: "vacation" */ '../views/vacation.vue')
+      },
+    ]
+  },
+  {
+    path: '/being',
+    name: 'being',
+    component: () => import(/* webpackChunkName: "being" */ '../views/being.vue'),
+    redirect:'/being/work',
+    children:[
+      {
+        path: 'work',
+        name: 'work',
+        component: () => import(/* webpackChunkName: "work" */ '../views/work.vue')
+      },{
+        path: 'vacation',
+        name: 'vacation',
+        component: () => import(/* webpackChunkName: "vacation" */ '../views/vacation.vue')
+      },
+    ]
+  },
+  {
+    path: '/after',
+    name: 'after',
+    component: () => import(/* webpackChunkName: "after" */ '../views/after.vue'),
+    redirect:'/after/work',
+    children:[
+      {
+        path: 'work',
+        name: 'work',
+        component: () => import(/* webpackChunkName: "work" */ '../views/work.vue')
+      },{
+        path: 'vacation',
+        name: 'vacation',
+        component: () => import(/* webpackChunkName: "vacation" */ '../views/vacation.vue')
+      },
+    ]
   }
 ]
 
