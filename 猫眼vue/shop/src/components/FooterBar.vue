@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <router-link to="/home">影院</router-link>
+    <router-link to="/home/hot">影院</router-link>
     <router-link to="/about">电影</router-link>
     <router-link to="/mine">我的</router-link>
   </div>
