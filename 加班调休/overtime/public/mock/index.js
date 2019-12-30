@@ -1,11 +1,11 @@
 const Mock = require("mockjs")
 const type = ["待处理","处理中","处理后"];
-const work = ["双休日","节假日","年假日"]
+const work = ["双休日","节假日","年假日","调休"]
 let data = Mock.mock({
   "list|3":[{
     "type|+1": type,
     "menu|10":[{
-      "id":1,
+      "id":"@id",
       "boolean|1": true,
       "name":"@cname",
       "work|+1":work,

@@ -4,18 +4,34 @@
     <FooterBar />
     <main>
       <router-view/>
-      <div class="add">+发起任务</div>
+      <div class="add" @click="EventClick()">+发起任务</div>
     </main>
+    <Dialog v-show="isDailog" @isDailogBar = "isDailogBar"/>
   </div>
 </template>
 <script>
 import FooterBar from '@/components/FooterBar'
 import HeaderBar from '@/components/HeaderBar'
+import Dialog from '@/components/Dialog'
 export default {
+  data() {
+    return {
+      isDailog:false
+    }
+  },
   components:{
     FooterBar,
-    HeaderBar
-  }
+    HeaderBar,
+    Dialog
+  },
+  methods: {
+    isDailogBar(islog){
+      this.isDailog = islog;
+    },
+    EventClick(){
+      this.isDailog = true;
+    }
+  },
 }
 </script>
 <style lang="scss">
@@ -49,6 +65,9 @@ export default {
       border-radius: 20px;
       background: #17573a;
     }
+  }
+  .dailog{
+    z-index: 12;
   }
 }
 

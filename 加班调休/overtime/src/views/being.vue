@@ -1,8 +1,12 @@
 <template>
-  <div class="being">
-      <router-link to="/being/work">加班</router-link>
-      <router-link to="/being/vacation">休假</router-link>
-      <router-view></router-view>
+  <div>
+      <div class="being">
+        <router-link to="/being/work">加班</router-link>
+        <router-link to="/being/vacation">休假</router-link>
+      </div>
+      <div>
+        <router-view></router-view>
+      </div>
   </div>
 </template>
 <style lang="scss">
