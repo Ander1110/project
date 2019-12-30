@@ -2,11 +2,11 @@
   <div class="dailog">
     <div class="mask" @click="EventBind()"></div>
     <div class="content">
-      <div>
+      <div @click="Eventwork()">
         <div class="work"></div>
         <p>加班</p>
       </div>
-      <div>
+      <div @click="Eventvacation()">
         <div class="vacation"></div>
         <p>休假</p>
       </div>
@@ -23,6 +23,18 @@ export default {
   methods: {
     EventBind(){
       this.$emit('isDailogBar',this.isDailog);
+    },
+    Eventwork(){
+      this.$router.push({
+        path:`/detail`
+      })
+      this.EventBind()
+    },
+    Eventvacation(){
+       this.$router.push({
+        path:`/detail`
+      })
+      this.EventBind()
     }
   },
 }

@@ -19,8 +19,6 @@ export default {
   },
   created() {
     this.getData();
-    
-    
   },
   methods: {
     getData() {
@@ -38,12 +36,15 @@ export default {
 </script>
 <style lang="scss">
 .work{
-  width: 100%;
+  width: 100vw;
   .box{
+    box-sizing: border-box;
     width: 100%;
     height: 100px;
     padding: 5px;
-    color: #ccc;
+    color: #aaa;
+    background: #eee;
+    margin: 10px 0;
     span{
       text-align: center;
       display: inline-block;

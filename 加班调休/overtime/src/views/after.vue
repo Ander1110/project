@@ -1,8 +1,8 @@
 <template>
  <div>
       <div class="after">
-        <router-link to="/after/work">加班</router-link>
-        <router-link to="/after/vacation">休假</router-link>
+        <router-link to="/home/after/work">加班</router-link>
+        <router-link to="/home/after/vacation">休假</router-link>
       </div>
       <div>
         <router-view></router-view>
